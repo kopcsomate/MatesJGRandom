@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jungle Randomizer</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1>Jungle Randomizer</h1>
+        <p class="subtitle">Diamond+ • Winrate &gt; 50% • Games ≥ 100</p>
+      </div>
+
+      <div class="controls">
+        <div class="segmented" role="tablist" aria-label="Mode">
+          <button class="seg active" id="modeMeta" aria-selected="true">Normal Junglers</button>
+          <button class="seg" id="modeOff" aria-selected="false">Off-meta</button>
+        </div>
+
+        <button class="btn primary" id="rollBtn">Roll</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card pick" id="pickCard">
+        <div class="pick-top">
+          <div class="champ">
+            <div class="champ-icon-wrap">
+              <img id="champIcon" class="champ-icon" alt="" />
+              <div class="ring"></div>
+            </div>
+            <div class="champ-meta">
+              <div class="title" id="champName">Loading…</div>
+              <div class="badges">
+                <span class="badge" id="modeBadge">—</span>
+                <span class="badge subtle" id="patchBadge">—</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">Winrate</div>
+              <div class="stat-value" id="wr">—</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Games</div>
+              <div class="stat-value" id="games">—</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Pickrate</div>
+              <div class="stat-value" id="pr">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="two-col">
+          <div>
+            <h3>Core Items</h3>
+            <div class="icons" id="items"></div>
+            <p class="hint" id="itemsText"></p>
+          </div>
+
+          <div>
+            <h3>Runes</h3>
+            <div class="runes">
+              <div class="rune-row" id="runesPrimary"></div>
+              <div class="rune-row" id="runesSecondary"></div>
+              <div class="rune-row shards" id="runeShards"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="two-col">
+          <div>
+            <h3>Summoner Spells</h3>
+            <div class="icons" id="spells"></div>
+          </div>
+
+          <div>
+            <h3>Build Sample Stats</h3>
+            <div class="mini">
+              <div class="mini-line"><span>Build WR</span><b id="bwr">—</b></div>
+              <div class="mini-line"><span>Build Games</span><b id="bgames">—</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <span class="muted" id="generatedAt"></span>
+        </div>
+      </div>
+
+      <div class="card side">
+        <h2>Tips</h2>
+        <ul>
+          <li><b>Normal Junglers</b> = higher jungle pickrate.</li>
+          <li><b>Off-meta</b> = low jungle pickrate but still winning.</li>
+          <li>Click <b>Roll</b> until you get something you’d actually play 😄</li>
+        </ul>
+
+        <div class="smallcard">
+          <div class="smalltitle">Dataset health</div>
+          <div class="minilist">
+            <div><span>Total jungle games</span><b id="totalJungle">—</b></div>
+            <div><span>Qualified champs</span><b id="qualified">—</b></div>
+            <div><span>Meta champs</span><b id="metaCount">—</b></div>
+            <div><span>Off-meta champs</span><b id="offCount">—</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
